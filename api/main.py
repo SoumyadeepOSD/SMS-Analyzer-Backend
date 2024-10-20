@@ -28,7 +28,7 @@ def read_root():
 
 
 @app.post("/sentiment")
-def read_item(item: Item):
+async def read_item(item: Item):
     response_list = []
     for message in item.messages:
         chat_completion = client.chat.completions.create(
